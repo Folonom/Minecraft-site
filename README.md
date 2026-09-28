@@ -12,6 +12,13 @@
 python3 -m http.server 8000   # затем http://localhost:8000
 ```
 
+## Публикация на GitHub Pages
+
+Workflow `.github/workflows/pages.yml` выкладывает сайт при каждом пуше в ветку.
+Один раз включите: репозиторий → **Settings → Pages → Build and deployment → Source: GitHub Actions**,
+затем запустите workflow (вкладка Actions → Deploy to GitHub Pages → Run workflow).
+Адрес сайта: `https://<пользователь>.github.io/<репозиторий>/`.
+
 ## Структура
 
 ```
