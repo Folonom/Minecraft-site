@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CraftStore — купить Minecraft Java &amp; Bedrock Edition</title>
+  <meta name="description" content="Купить Minecraft для ПК: Java &amp; Bedrock Edition, коллекции с Minecoins, Realms Plus и подарочные карты. Ключ приходит на почту сразу после оплаты.">
+  <meta name="theme-color" content="#1b1526">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CraftStore — купить Minecraft Java &amp; Bedrock Edition">
+  <meta property="og:description" content="Java + Bedrock для ПК, коллекции с Minecoins и подарочные карты. Ключ на e-mail сразу после оплаты.">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/monocraft.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/img/panorama.jpg" as="image">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+<!-- Пиксельные иконки (используются через <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 7 6"><path fill="currentColor" shape-rendering="crispEdges" d="M6 0h1v1H6zM5 1h2v1H5zM0 2h1v1H0zM4 2h2v1H4zM0 3h2v1H0zM3 3h2v1H3zM1 4h3v1H1zM2 5h1v1H2z"/></symbol>
+    <symbol id="i-cross" viewBox="0 0 5 5"><path fill="currentColor" shape-rendering="crispEdges" d="M0 0h1v1H0zM4 0h1v1H4zM1 1h1v1H1zM3 1h1v1H3zM2 2h1v1H2zM1 3h1v1H1zM3 3h1v1H3zM0 4h1v1H0zM4 4h1v1H4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 10 9"><path fill="currentColor" shape-rendering="crispEdges" d="M0 3h6v3H0zM6 1h1v7H6zM7 2h1v5H7zM8 3h1v3H8zM9 4h1v1H9z"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#shop">Перейти к товарам</a>
+
+<div id="page">
+  <!-- ====== Шапка ====== -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#home" aria-label="CraftStore — на главную">
+        <img class="brand-icon" src="assets/img/blocks/grass.png" alt="" width="40" height="46">
+        <span class="brand-text">CRAFT<b>STORE</b></span>
+      </a>
+
+      <nav id="nav" class="nav" aria-label="Основная навигация">
+        <a href="#shop">Магазин</a>
+        <a href="#modes">Режимы</a>
+        <a href="#compare">Java или Bedrock</a>
+        <a href="#how">Как купить</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn--sm cart-btn" id="cart-open" aria-haspopup="dialog" aria-controls="drawer">
+          <img class="px" src="assets/textures/item/emerald.png" alt="" width="24" height="24">
+          <span class="cart-label">Инвентарь</span>
+          <span class="cart-count" id="cart-count" aria-label="Товаров в корзине: 0">0</span>
+        </button>
+        <button type="button" class="btn btn--sm burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====== Главный экран ====== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="pano" aria-hidden="true"><div class="pano-track"></div></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+
+      <div class="hero-deco" aria-hidden="true">
+        <img src="assets/img/blocks/diamond_ore.png" alt="" class="deco d1">
+        <img src="assets/img/blocks/tnt.png" alt="" class="deco d2">
+        <img src="assets/img/blocks/emerald_block.png" alt="" class="deco d3">
+        <img src="assets/img/blocks/gold_block.png" alt="" class="deco d4">
+      </div>
+
+      <div class="wrap hero-inner">
+        <p class="kicker">Java + Bedrock в одной покупке</p>
+        <h1 id="hero-title">
+          <span class="h1-small">Купить</span>
+          <span class="title-wrap">
+            <span class="stone">Minecraft</span>
+            <span class="splash" id="splash" aria-hidden="true">Ключ за секунду!</span>
+          </span>
+        </h1>
+        <p class="lead">Построй дом из блоков, отправься в шахту и переживи первую ночь. Лицензионный ключ придёт на почту сразу после оплаты.</p>
+        <div class="cta">
+          <a class="btn btn--green btn--lg" href="#shop">Купить игру</a>
+          <a class="btn btn--lg" href="#modes">Что внутри</a>
+        </div>
+        <p class="hero-note">
+          <span class="hearts" style="--n:10" aria-hidden="true"></span>
+          <span>Мгновенная выдача · Поддержка · Оплата картой и СБП</span>
+        </p>
+      </div>
+
+      <div class="grass-edge" aria-hidden="true"></div>
+    </section>
+
+    <!-- ====== Магазин ====== -->
+    <section class="section tex-dirt" id="shop" aria-labelledby="shop-title">
+      <div class="wrap">
+        <ul class="perks reveal" role="list">
+          <li class="perk">
+            <span class="slot"><img class="px" src="assets/textures/item/paper.png" alt=""></span>
+            <div><h3>Мгновенная выдача</h3><p>Ключ приходит на почту сразу после оплаты.</p></div>
+          </li>
+          <li class="perk">
+            <span class="slot"><img class="px" src="assets/textures/item/diamond_pickaxe.png" alt=""></span>
+            <div><h3>Java + Bedrock</h3><p>Java и Bedrock для Windows — за одну покупку.</p></div>
+          </li>
+          <li class="perk">
+            <span class="slot"><img class="px" src="assets/textures/item/nether_star.png" alt=""></span>
+            <div><h3>Обновления бесплатно</h3><p>Новые версии игры выходят без доплат.</p></div>
+          </li>
+          <li class="perk">
+            <span class="slot"><img class="px" src="assets/textures/item/totem_of_undying.png" alt=""></span>
+            <div><h3>Живая поддержка</h3><p>Поможем с активацией и установкой.</p></div>
+          </li>
+        </ul>
+
+        <header class="sec-head reveal">
+          <p class="kicker">Магазин</p>
+          <h2 id="shop-title">Выбери своё издание</h2>
+          <p>Добавляй товары в инвентарь и оформляй заказ в один клик.</p>
+        </header>
+
+        <div class="tabs reveal" id="tabs" role="group" aria-label="Категории товаров"></div>
+
+        <div class="grid" id="product-grid" aria-live="polite">
+          <noscript><p class="notice">Для работы магазина нужен включённый JavaScript.</p></noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Режимы игры ====== -->
+    <section class="section tex-stone" id="modes" aria-labelledby="modes-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Геймплей</p>
+          <h2 id="modes-title">Играй как хочешь</h2>
+          <p>В Minecraft нет единственно правильного способа играть. Выбирай режим под настроение.</p>
+        </header>
+
+        <div class="modes">
+          <article class="mode panel reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/textures/item/diamond_sword.png" alt=""></span>
+            <h3>Выживание</h3>
+            <p>Добывай ресурсы, крафти инструменты, строй укрытие и переживи ночь — по земле бродят зомби и крипперы.</p>
+            <span class="hearts" style="--n:10" role="img" aria-label="Десять сердец здоровья"></span>
+          </article>
+          <article class="mode panel reveal">
+            <span class="slot slot--lg"><img src="assets/img/blocks/glowstone.png" alt=""></span>
+            <h3>Творчество</h3>
+            <p>Бесконечные блоки, полёт и полная безопасность. Строй замки, города и целые миры без ограничений.</p>
+            <span class="mode-tag">Без ограничений</span>
+          </article>
+          <article class="mode panel reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/textures/item/compass_00.png" alt=""></span>
+            <h3>Приключение</h3>
+            <p>Исследуй карты и истории, созданные сообществом. Иногда даже нужно просто дойти до конца.</p>
+            <span class="mode-tag">Карты сообщества</span>
+          </article>
+          <article class="mode panel reveal">
+            <span class="slot slot--lg slot--faces">
+              <img class="px" src="assets/img/faces/steve.png" alt="">
+              <img class="px" src="assets/img/faces/alex.png" alt="">
+            </span>
+            <h3>Мультиплеер</h3>
+            <p>Играй с друзьями на серверах и в Realms. Вместе строить веселее, а от крипперов бегать — смешнее.</p>
+            <span class="mode-tag">Серверы · Realms</span>
+          </article>
+        </div>
+
+        <header class="sec-head sec-head--sub reveal">
+          <h3 class="h-like">Кто тебя встретит</h3>
+        </header>
+        <ul class="mobs" role="list">
+          <li class="mob reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/faces/creeper.png" alt=""></span>
+            <p class="tip"><b class="c-green">Крипер</b>Тихо подкрадывается и… ссссс. Держи дистанцию.</p>
+          </li>
+          <li class="mob reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/faces/enderman.png" alt=""></span>
+            <p class="tip"><b class="c-purple">Эндермен</b>Высокий, тёмный, телепортируется. Не смотри в глаза.</p>
+          </li>
+          <li class="mob reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/faces/zombie.png" alt=""></span>
+            <p class="tip"><b class="c-green">Зомби</b>Выходит ночью и загорается на солнце.</p>
+          </li>
+          <li class="mob reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/faces/skeleton.png" alt=""></span>
+            <p class="tip"><b class="c-gray">Скелет</b>Меткий лучник. Носи щит и не стой на месте.</p>
+          </li>
+          <li class="mob reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/faces/spider.png" alt=""></span>
+            <p class="tip"><b class="c-red">Паук</b>Лазает по стенам, а в темноте нападает.</p>
+          </li>
+          <li class="mob reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/faces/pig.png" alt=""></span>
+            <p class="tip"><b class="c-pink">Свинья</b>Мирная и полезная. Единственная, кто тебе рад.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ====== Сравнение ====== -->
+    <section class="section tex-planks" id="compare" aria-labelledby="compare-title">
+      <div class="wrap wrap--narrow">
+        <header class="sec-head reveal">
+          <p class="kicker">Сравнение</p>
+          <h2 id="compare-title">Java или Bedrock?</h2>
+          <p>На Windows издание для ПК включает оба варианта — переключайся, когда захочешь.</p>
+        </header>
+
+        <div class="panel table-panel reveal">
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Таблица сравнения изданий">
+            <table class="compare">
+              <thead>
+                <tr><th scope="col">Возможность</th><th scope="col"><img src="assets/img/blocks/grass.png" alt="" width="26" height="30"> Java Edition</th><th scope="col"><img src="assets/img/blocks/bedrock.png" alt="" width="26" height="30"> Bedrock Edition</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Платформы</th><td data-label="Java Edition">Windows, macOS, Linux</td><td data-label="Bedrock Edition">Windows, Xbox, PlayStation, Switch, iOS, Android</td></tr>
+                <tr><th scope="row">Моды</th><td data-label="Java Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>Тысячи модов (Forge, Fabric)</span></span></td><td data-label="Bedrock Edition"><span class="cell"><i class="part"><svg><use href="#i-check"/></svg></i><span>Аддоны и Marketplace</span></span></td></tr>
+                <tr><th scope="row">Серверы</th><td data-label="Java Edition">Любые серверы сообщества</td><td data-label="Bedrock Edition">Избранные серверы и Realms</td></tr>
+                <tr><th scope="row">Игра между платформами</th><td data-label="Java Edition"><span class="cell"><i class="no"><svg><use href="#i-cross"/></svg></i><span>Только Java-игроки</span></span></td><td data-label="Bedrock Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>ПК, консоли и телефоны</span></span></td></tr>
+                <tr><th scope="row">Realms</th><td data-label="Java Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>Да</span></span></td><td data-label="Bedrock Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>Да</span></span></td></tr>
+                <tr><th scope="row">Minecoins и Marketplace</th><td data-label="Java Edition"><span class="cell"><i class="no"><svg><use href="#i-cross"/></svg></i><span>Нет</span></span></td><td data-label="Bedrock Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>Да</span></span></td></tr>
+                <tr><th scope="row">Входит в издание для ПК</th><td data-label="Java Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>Да</span></span></td><td data-label="Bedrock Edition"><span class="cell"><i class="yes"><svg><use href="#i-check"/></svg></i><span>Да (Windows)</span></span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Как купить ====== -->
+    <section class="section tex-dirt" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="kicker">Крафт</p>
+          <h2 id="how-title">Как получить игру</h2>
+          <p>Четыре простых шага — и ты в своём мире.</p>
+        </header>
+
+        <ol class="steps" role="list">
+          <li class="step reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/textures/item/compass_00.png" alt=""></span>
+            <h3><b>1</b> Выбери</h3>
+            <p>Добавь нужное издание в инвентарь и нажми «Оформить».</p>
+          </li>
+          <li class="step-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></li>
+          <li class="step reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/textures/item/emerald.png" alt=""></span>
+            <h3><b>2</b> Оплати</h3>
+            <p>Укажи e-mail и удобный способ оплаты.</p>
+          </li>
+          <li class="step-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></li>
+          <li class="step reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/textures/item/enchanted_book.png" alt=""></span>
+            <h3><b>3</b> Получи ключ</h3>
+            <p>Код активации мгновенно придёт на почту.</p>
+          </li>
+          <li class="step-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></li>
+          <li class="step reveal">
+            <span class="slot slot--lg"><img class="px" src="assets/img/blocks/grass.png" alt=""></span>
+            <h3><b>4</b> Играй</h3>
+            <p>Активируй код в аккаунте Microsoft и запускай лаунчер.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====== FAQ ====== -->
+    <section class="section tex-stone" id="faq" aria-labelledby="faq-title">
+      <div class="wrap wrap--narrow">
+        <header class="sec-head reveal">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-title">Частые вопросы</h2>
+        </header>
+
+        <div class="faq reveal">
+          <details class="panel" open>
+            <summary>Что я получу после покупки?</summary>
+            <p>Код активации для выбранного товара. Его нужно ввести в аккаунте Microsoft, после чего игра появится в лаунчере Minecraft.</p>
+          </details>
+          <details class="panel">
+            <summary>Нужен ли аккаунт Microsoft?</summary>
+            <p>Да. Для запуска Minecraft нужен бесплатный аккаунт Microsoft — старые аккаунты Mojang уже перенесены на него.</p>
+          </details>
+          <details class="panel">
+            <summary>На каких устройствах работает издание для ПК?</summary>
+            <p>Java Edition запускается на Windows, macOS и Linux, Bedrock Edition — на Windows 10/11. Для консолей и смартфонов игра покупается отдельно в их магазинах приложений.</p>
+          </details>
+          <details class="panel">
+            <summary>Что такое Minecoins и Realms?</summary>
+            <p>Minecoins — внутриигровая валюта для покупок в Marketplace (скины, миры, аддоны) в Bedrock Edition. Realms — приватный сервер от Mojang для игры с друзьями.</p>
+          </details>
+          <details class="panel">
+            <summary>Можно ли играть с друзьями?</summary>
+            <p>Да: на серверах, в Realms или по локальной сети. Java и Bedrock — разные версии игры, и напрямую между собой их игроки не встречаются.</p>
+          </details>
+          <details class="panel">
+            <summary>Как связаться с поддержкой?</summary>
+            <p>Напишите на <a href="mailto:support@example.com">support@example.com</a> — мы поможем с активацией и любыми вопросами по заказу.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== Призыв ====== -->
+    <section class="cta-band tex-nether" aria-labelledby="cta-title">
+      <div class="wrap cta-inner reveal">
+        <img class="px cta-icon" src="assets/textures/item/flint_and_steel.png" alt="" width="64" height="64">
+        <div>
+          <h2 id="cta-title">Готов начать приключение?</h2>
+          <p>Оформи заказ за минуту — и через минуту уже копай свою первую шахту.</p>
+        </div>
+        <a class="btn btn--green btn--lg" href="#shop">В магазин</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== Подвал ====== -->
+  <footer class="site-footer tex-bedrock" id="contacts">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="#home">
+          <img class="brand-icon" src="assets/img/blocks/grass.png" alt="" width="40" height="46">
+          <span class="brand-text">CRAFT<b>STORE</b></span>
+        </a>
+        <p class="footer-about">Магазин ключей Minecraft для игроков, которые хотят меньше ждать и больше строить.</p>
+      </div>
+      <nav aria-label="Разделы сайта">
+        <h3>Разделы</h3>
+        <ul role="list">
+          <li><a href="#shop">Магазин</a></li>
+          <li><a href="#modes">Режимы игры</a></li>
+          <li><a href="#compare">Java или Bedrock</a></li>
+          <li><a href="#how">Как купить</a></li>
+          <li><a href="#faq">Вопросы и ответы</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Контакты</h3>
+        <ul role="list">
+          <li><a href="mailto:support@example.com">support@example.com</a></li>
+          <li>Ежедневно, 10:00–22:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap footer-legal">
+      <p>Minecraft — товарный знак Mojang Synergies AB. Сайт не является официальным и не связан с Mojang Studios или Microsoft. Текстуры и иконки принадлежат Mojang Studios и используются в демонстрационных целях.</p>
+      <p>© <span id="year">2026</span> CraftStore</p>
+    </div>
+  </footer>
+</div>
+
+<!-- Полоска опыта: показывает, как далеко ты прокрутил страницу -->
+<div class="xp" aria-hidden="true">
+  <span class="xp-level" id="xp-level">0</span>
+  <div class="xp-bar"><div class="xp-fill" id="xp-fill"></div></div>
+</div>
+
+<!-- Уведомления -->
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<!-- ====== Корзина («Инвентарь») ====== -->
+<div class="overlay" id="overlay" hidden></div>
+<aside class="drawer panel" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <header class="drawer-head">
+    <h2 id="drawer-title">Инвентарь</h2>
+    <button type="button" class="btn btn--sm btn--icon" id="cart-close" aria-label="Закрыть корзину"><svg class="ico"><use href="#i-cross"/></svg></button>
+  </header>
+
+  <div class="drawer-body" id="cart-list"></div>
+
+  <footer class="drawer-foot" id="cart-foot">
+    <form class="promo" id="promo-form" autocomplete="off">
+      <label for="promo-input">Промокод</label>
+      <div class="promo-row">
+        <input class="field" id="promo-input" name="promo" type="text" placeholder="CREEPER" maxlength="24" spellcheck="false">
+        <button type="submit" class="btn btn--sm">ОК</button>
+      </div>
+      <p class="promo-msg" id="promo-msg" role="status"></p>
+    </form>
+
+    <dl class="totals">
+      <div><dt>Товары</dt><dd id="sum-sub">0 ₽</dd></div>
+      <div id="sum-discount-row" hidden><dt>Скидка</dt><dd id="sum-discount">−0 ₽</dd></div>
+      <div class="total"><dt>Итого</dt><dd id="sum-total">0 ₽</dd></div>
+    </dl>
+    <button type="button" class="btn btn--green btn--lg btn--block" id="checkout-open">Оформить заказ</button>
+    <button type="button" class="link-btn" id="cart-clear">Очистить инвентарь</button>
+  </footer>
+</aside>
+
+<!-- ====== Оформление заказа ====== -->
+<div class="modal-wrap" id="modal" hidden>
+  <div class="modal panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <header class="drawer-head">
+      <h2 id="modal-title">Оформление заказа</h2>
+      <button type="button" class="btn btn--sm btn--icon" id="modal-close" aria-label="Закрыть"><svg class="ico"><use href="#i-cross"/></svg></button>
+    </header>
+
+    <form id="checkout-form" novalidate>
+      <div class="order-mini" id="order-mini"></div>
+
+      <div class="form-row">
+        <label for="f-email">E-mail для получения ключа</label>
+        <input class="field" id="f-email" name="email" type="email" required autocomplete="email" placeholder="steve@example.com">
+        <p class="err" id="err-email" role="alert"></p>
+      </div>
+
+      <div class="form-row">
+        <label for="f-nick">Ник в Minecraft <small>(необязательно)</small></label>
+        <input class="field" id="f-nick" name="nick" type="text" maxlength="16" autocomplete="off" spellcheck="false" placeholder="Steve_2009">
+        <p class="err" id="err-nick" role="alert"></p>
+      </div>
+
+      <fieldset class="form-row pay">
+        <legend>Способ оплаты</legend>
+        <label class="pay-opt"><input type="radio" name="pay" value="card" checked><span class="pay-box"><img class="px" src="assets/textures/item/gold_ingot.png" alt="" width="24" height="24">Банковская карта</span></label>
+        <label class="pay-opt"><input type="radio" name="pay" value="sbp"><span class="pay-box"><img class="px" src="assets/textures/item/lapis_lazuli.png" alt="" width="24" height="24">СБП</span></label>
+        <label class="pay-opt"><input type="radio" name="pay" value="wallet"><span class="pay-box"><img class="px" src="assets/textures/item/redstone.png" alt="" width="24" height="24">Электронный кошелёк</span></label>
+      </fieldset>
+
+      <label class="check">
+        <input type="checkbox" id="f-agree" name="agree" required>
+        <span class="check-box"><svg><use href="#i-check"/></svg></span>
+        <span>Я согласен с условиями покупки цифровых товаров</span>
+      </label>
+      <p class="err" id="err-agree" role="alert"></p>
+
+      <div class="modal-total"><span>К оплате</span><b id="modal-total">0 ₽</b></div>
+      <button type="submit" class="btn btn--green btn--lg btn--block">Оплатить</button>
+      <p class="demo-note">Демо-режим: платёжная система не подключена, деньги не списываются.</p>
+    </form>
+
+    <div class="success" id="success" hidden>
+      <div class="success-icon"><img class="px" src="assets/textures/item/nether_star.png" alt="" width="64" height="64"></div>
+      <h3>Заказ принят!</h3>
+      <p class="success-id">Номер заказа: <b id="order-id">—</b></p>
+      <p id="order-text"></p>
+      <p class="demo-note">Это демонстрационный магазин: платёж не выполнялся, ключ не выдаётся.</p>
+      <button type="button" class="btn btn--green btn--lg" id="success-close">Продолжить игру</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
